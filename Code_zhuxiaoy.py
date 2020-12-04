@@ -9,7 +9,6 @@ import json
 import secrets
 import sqlite3
 
-
 CACHE_FILENAME = "cache.json"
 CACHE_DICT = {}
 api_key = secrets.API_KEY
