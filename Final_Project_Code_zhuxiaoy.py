@@ -389,7 +389,7 @@ def movie_detailed_search(movie_id):
     '''
     connection = sqlite3.connect("Movies.sqlite")
     cursor = connection.cursor()
-    query = '''SELECT * FROM MovieDetailedInformation WHERE id = ''' + movie_id
+    query = '''SELECT MovieDetailedInformation.id, MovieName, ReleaseDate, runtime, genre, director, Internet_Movie_rating, Rotten_Tomatoes_rating, Metacritic_rating FROM MovieDetailedInformation JOIN BoxOffice ON MovieDetailedInformation.id = BoxOffice.id WHERE MovieDetailedInformation.id = ''' + movie_id
     result = cursor.execute(query).fetchall()
     connection.close()
     return result
@@ -397,11 +397,17 @@ def movie_detailed_search(movie_id):
 ## the website in the recommendation part showing the detailed information of a movie
 @app.route('/')
 def recommend():
-    results = result_movie
+    if result_movie[0][2] == None:
+        results = [('Sorry, not found',result_movie[0][1],'Sorry, not found','Sorry, not found','Sorry, not found','Sorry, not found','Sorry, not found','Sorry, not found','Sorry, not found')]
+        first_rating = 0
+        second_rating = 0
+        third_rating = 0
+    else:
+        results = result_movie
+        first_rating = float(str(result_movie[0][6]).split('/')[0])*10
+        second_rating = float(str(result_movie[0][7]).split('%')[0])
+        third_rating = float(str(result_movie[0][8]).split('/')[0])
     x_vals = ['IMDB','Rotten Tomatoes','Metacritic']
-    first_rating = float(str(result_movie[0][6]).split('/')[0])*10
-    second_rating = float(str(result_movie[0][7]).split('%')[0])
-    third_rating = float(str(result_movie[0][8]).split('/')[0])
     y_vals = [first_rating, second_rating, third_rating]
     bars_data = go.Bar(x=x_vals, y=y_vals)
     basic_layout = go.Layout(height=600, width=500)
@@ -639,7 +645,4 @@ if __name__ == "__main__":
         else:
             print('Please input valid words. (e.g. r for recommendation or c for comparison or exit for exit)')
             input_R_C = input('Do you want a recommendation or comparison or exit? Please input r for recommendation or c for comparison or exit for exit:')
-
-
-
 
