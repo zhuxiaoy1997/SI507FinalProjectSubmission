@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8"/>
+    <title>Comparison Results</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Return <a href='/'>home</a>.
+    </p>
+    <h1>Here is a graph showing the {{variable}} of {{movie_kind}} in {{Time}} of the last fifty years in the US.</h1>
+    <h2>You can hover on bars to see the exact value of {{variable}}.</h2>
+    {{plot_div | safe}}
+    <h3>Here is a table showing the correspoding information</h3>
+    <table>
+        <tr>
+            <th>year</th>
+            <th>{{variable}}</th>
+            <th>movie name</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8"/>
+    <title>Comparison</title>
+</head>
+<body>
+    <h1>Welcome to compare movies!</h1>
+    <form action='/results' method='POST'>
+    <p>
+    [1] What kind of movies do you want to compare: <br/>
+        <input type='radio' name='movies' 
+                value='AllMovies' checked='checked'/> All Movies <br/>
+        <input type='radio' name='movies' 
+                value='Champions'/> Movies of the highest box office <br/>
+    </p>
+    <p>
+    [2] If you choose to compare among all movies, then what do you want to compare with: <br/>
+        <input type='radio' name='allmovies'
+            value='cumulative gross' checked='checked'/>(All Movies) Cumulative Gross<br/>
+        <input type='radio' name='allmovies'
+            value='average gross'/>(All Movies) Average Gross<br/>
+        <input type='radio' name='allmovies'
+            value='NA'/>Not select if you choose movies of the highest box office<br/>
+    </p>
+    <p>
+    [3] If you choose to compare among movies of the highest box office, then what do you want to compare with: <br/>
+        <input type='radio' name='champions'
+            value='gross' />(Movies of the highest box office) Gross<br/>
+        <input type='radio' name='champions'
+            value='IMDB rating' />(Movies of the highest box office) IMDB rating<br/>
+        <input type='radio' name='champions'
+            value='Rotten Tomatoes rating' />(Movies of the highest box office) Rating on Rotten Tomatoes<br/>
+        <input type='radio' name='champions'
+            value='Metacritic rating' />(Movies of the highest box office) Metacritic rating<br/>
+        <input type='radio' name='champions'
+            value='NA' />Not select if you choose all movies<br/>
+    </p>
+    <p>
+    [4] What time interval do you want to compare: <br/>
+        <input type='radio' name='interval'
+            value='first quarter' checked='checked'/>First quarter<br/>
+        <input type='radio' name='interval'
+            value='second quarter'/>Second quarter<br/>
+        <input type='radio' name='interval'
+            value='third quarter'/>Third quarter<br/>
+        <input type='radio' name='interval'
+            value='fourth quarter'/>Fourth quarter<br/>
+        <input type='radio' name='interval'
+            value='january'/>January<br/>
+        <input type='radio' name='interval'
+            value='february'/>February<br/>
+        <input type='radio' name='interval'
+            value='march'/>March<br/>
+        <input type='radio' name='interval'
+            value='april'/>April<br/>
+        <input type='radio' name='interval'
+            value='may'/>May<br/>
+        <input type='radio' name='interval'
+            value='june'/>June<br/>
+        <input type='radio' name='interval'
+            value='july'/>July<br/>
+        <input type='radio' name='interval'
+            value='august'/>August<br/>
+        <input type='radio' name='interval'
+            value='september'/>September<br/>
+        <input type='radio' name='interval'
+            value='october'/>October<br/>
+        <input type='radio' name='interval'
+            value='november'/>November<br/>
+        <input type='radio' name='interval'
+            value='december'/>December<br/>
+    <input type='submit' value='Get Graph'/>
+    </form>
+</body>
+</html>

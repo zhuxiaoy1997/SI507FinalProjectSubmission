@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8"/>
+    <title>detailed information</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The detailed inforamtion of your selected movie</h1>
+    <table>
+        <tr>
+            <th>Information</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Movie Name</td>
+            <td>{{results[0][1]}}</td>
+        </tr>
+        <tr>
+            <td>Release Date</td>
+            <td>{{results[0][2]}}</td>
+        </tr>
+        <tr>
+            <td>Runtime</td>
+            <td>{{results[0][3]}}</td>
+        </tr>
+        <tr>
+            <td>Genre</td>
+            <td>{{results[0][4]}}</td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>{{results[0][5]}}</td>
+        </tr>
+        <tr>
+            <td>IMDB Rating</td>
+            <td>{{results[0][6]}}</td>
+        </tr>
+        <tr>
+            <td>Rating on Rotten Tomatoes</td>
+            <td>{{results[0][7]}}</td>
+        </tr>
+        <tr>
+            <td>Metacritic Rating</td>
+            <td>{{results[0][8]}}</td>
+        </tr>
+    </table>
+    <h2>Here is a graph comparing the movie's ratings on three websites. (The scores have been converted to 100 points)</h2>
+    <h3>You can hover on the bars to see the exact score.</h3>
+    {{plot_div | safe}}
+    <i>(I hope you liked it)</i>
+</body>
+</html>
