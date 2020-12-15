@@ -1,6 +1,6 @@
 # SI507FinalProjectSubmission
 
-To run my code, an api key is required. You can use my api key (secrets.py) submitted on Canvas. Also, you need to download the file: templates which includes several html files and you need to put the file in the sam directory of Final_Project_Code_zhuxiaoy.py.
+To run my code, an api key is required. You can use my api key (secrets.py) submitted on Canvas. Also, you need to download the file: templates which includes several html files and you need to put the templates file in the same directory of Final_Project_Code_zhuxiaoy.py.
 [Note]: my program will take 12 minutes to create tables by fetching and 40 seconds by caching. To save time, you can either use the cache file I provide or use the Movies.sqlite database and comment my codes in the set-up part under the command: if __name__ == “__main__”.
 
 How to interact with my program：
